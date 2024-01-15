@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 15, 2024 at 03:31 AM
+-- Generation Time: Jan 15, 2024 at 05:43 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -70,7 +70,8 @@ CREATE TABLE `job_application` (
 --
 
 INSERT INTO `job_application` (`application_id`, `date_applied`, `job_id`, `tutor_id`, `user_id`, `status`) VALUES
-(4, '2024-01-15 02:17:47', 9, 16, 15, 'Rejected');
+(4, '2024-01-15 02:17:47', 9, 16, 15, 'Rejected'),
+(5, '2024-01-15 03:01:12', 9, 16, 15, 'Pending');
 
 -- --------------------------------------------------------
 
@@ -261,7 +262,7 @@ CREATE TABLE `user_accounts` (
   `phone_number` varchar(100) NOT NULL,
   `is_verified` int(2) NOT NULL COMMENT '0 - not verified\r\n1 - verified',
   `role` int(5) NOT NULL COMMENT '1 - tutee\r\n2 - tutor\r\n3 - admin',
-  `otp` varchar(100) NOT NULL,
+  `otp` varchar(100) DEFAULT NULL,
   `user_status` varchar(100) NOT NULL DEFAULT 'Active'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -272,7 +273,8 @@ CREATE TABLE `user_accounts` (
 INSERT INTO `user_accounts` (`user_id`, `firstname`, `middlename`, `lastname`, `suffix`, `email`, `password`, `phone_number`, `is_verified`, `role`, `otp`, `user_status`) VALUES
 (15, 'Edrick Windel', '', 'Carmelo', '', '1', '1', '09383927182', 1, 1, '8taAS57k', 'Active'),
 (16, 'Dominick', '', 'Auman', '', '2', '2', '09389219381', 1, 2, 'a0EMzNwX', 'Active'),
-(17, 'Nina', NULL, 'Oporto', '', 'admin@gmail.com', 'admin', '09383926318', 1, 3, '123456', 'Active');
+(17, 'Nina', NULL, 'Oporto', '', 'admin@gmail.com', 'admin', '09383926318', 1, 3, '123456', 'Active'),
+(20, 'asod', 'asoidoi', 'oasidoi', '', 'apdo2@gmail.com', 'qweqweqwe', '02931204120', 1, 2, '123456', 'Active');
 
 --
 -- Indexes for dumped tables
@@ -372,7 +374,7 @@ ALTER TABLE `job`
 -- AUTO_INCREMENT for table `job_application`
 --
 ALTER TABLE `job_application`
-  MODIFY `application_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `application_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `job_module`
@@ -426,7 +428,7 @@ ALTER TABLE `tutor`
 -- AUTO_INCREMENT for table `user_accounts`
 --
 ALTER TABLE `user_accounts`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- Constraints for dumped tables
