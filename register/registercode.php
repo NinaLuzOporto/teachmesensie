@@ -75,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // If both email and phone number are unique, proceed with insertion
-    $otp = generateOTP();
+    $otp = 123456;
 
         $stmt = $con->prepare("INSERT INTO `user_accounts` (`firstname`,`middlename`,`lastname`,`suffix`, `email`, `password`, `phone_number`, `is_verified`, `role`, `otp`) VALUES (?, ?, ?, ?, ? ,?, ?, ?, ?, ?)");
 
@@ -131,18 +131,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ];
 
     // Redirect to OTP verification page
-    header('Location: otp.php');
+    header('Location: captcha.php');
     exit();
 }
 
-function generateOTP() {
-    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    $otp = '';
+// function generateOTP() {
+//     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+//     $otp = '';
 
-    for ($i = 0; $i < 8; $i++) {
-        $otp .= $characters[mt_rand(0, strlen($characters) - 1)];
-    }
+//     for ($i = 0; $i < 8; $i++) {
+//         $otp .= $characters[mt_rand(0, strlen($characters) - 1)];
+//     }
 
-    return $otp;
-}
+//     return $otp;
+// }
 ?>

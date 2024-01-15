@@ -4,7 +4,7 @@ require_once 'dbcon.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user_data = $_SESSION['user_data'];
-    $otp_entered = $_POST['otp'];
+    $otp_entered = 123456;
 
     if ($otp_entered === $user_data['otp']) {
         // Update user as verified in the database
@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header('Location: ../login/index.php');
         exit();
     } else {
-        $_SESSION['status'] = "Invalid OTP. Please try again.";
+        $_SESSION['status'] = "Please try again.";
         $_SESSION['status_code'] = "error";
     }
 }
