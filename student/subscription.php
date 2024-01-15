@@ -166,7 +166,7 @@ input::-webkit-inner-spin-button {
 
 
 
-            <div class="mb-4">
+            <!-- <div class="mb-4">
                 <h2>Add Payment</h2>
             <span>Please make the payment and wait for the administrator to approved the payment to use this system.</span>
                 
@@ -229,7 +229,7 @@ input::-webkit-inner-spin-button {
                     </div>
 
 
-                </div>
+                </div> -->
 
 
                 <div class="mt-4 mb-4 d-flex" style="float: right;">

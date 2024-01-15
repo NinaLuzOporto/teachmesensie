@@ -32,10 +32,10 @@
  if(isset($_POST['submit_payment']))
  {
      $user_id = $_SESSION['auth_user']['user_id'];
-     $reference = $_POST['reference'];
-     $subs = $_POST['subscriptiontype'];
-     $mop = $_POST['mop'];
-     $receipt = $_FILES['receipt'];
+    //  $reference = $_POST['reference'];
+    //  $subs = $_POST['subscriptiontype'];
+    //  $mop = $_POST['mop'];
+    //  $receipt = $_FILES['receipt'];
      $gender = $_POST['gender'];
      $address = $_POST['address'];
      $barangay = $_POST['barangay'];
@@ -43,8 +43,8 @@
      $zipcode = $_POST['zipcode'];
      $aboutme = $_POST['aboutme'];
  
-     $query = "INSERT INTO `subscriptions`(`user_id`, `subscription_type`, `reference`, `modeofpayment`, `receipt`) VALUES ('$user_id','$subs','$reference','$mop','$receipt')";
-     $query_run = mysqli_query($con, $query);
+    //  $query = "INSERT INTO `subscriptions`(`user_id`, `subscription_type`, `reference`, `modeofpayment`, `receipt`) VALUES ('$user_id','$subs','$reference','$mop','$receipt')";
+    //  $query_run = mysqli_query($con, $query);
      
      $profile_picture = ''; // Set a default value
      if (isset($_FILES['profile_picture']) && $_FILES['profile_picture']['error'] == 0) {
@@ -55,7 +55,7 @@
      $query1 = "INSERT INTO `tutee`(`user_id`, `gender`, `address`, `barangay`, `municipality`, `zipcode`, `aboutme`, `profile_picture`) VALUES ('$user_id','$gender','$address','$barangay','$municipality','$zipcode','$aboutme','$profile_picture')";
      
      $query_run1 = mysqli_query($con, $query1);
-     if($query_run || $query_run1)
+     if($query_run1)
      {
        header('Location: process_subscription.php');
          exit(0);

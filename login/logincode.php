@@ -54,7 +54,9 @@ if (mysqli_num_rows($login_query_run) > 0) {
             header("Location: ../tutor/subscription_check.php");
             exit(0);
         } elseif ($_SESSION['user_type'] == '1') {
-            header("Location: ../student/subscription_check.php");
+            $_SESSION['status'] = "Welcome $full_name!";
+            $_SESSION['status_code'] = "success";
+            header("Location: ../student/index.php");
             exit(0);
         } elseif ($_SESSION['user_type'] == '3') {
             $_SESSION['status'] = "Welcome $full_name!";
