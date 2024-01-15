@@ -29,6 +29,8 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  
+
   <!-- =======================================================
   * Template Name: NiceAdmin
   * Updated: May 30 2023 with Bootstrap v5.3.0
@@ -117,11 +119,13 @@
                    </div>
 
                     <div class="col-12">
-                      <div class="form-check">
-                        <input class="form-check-input" name="terms" type="checkbox" value="" id="acceptTerms" required>
-                        <label class="form-check-label" for="acceptTerms">I agree and accept the <a href="#">terms and conditions</a></label>
-                        <div class="invalid-feedback">You must agree before submitting.</div>
-                      </div>
+                    <div class="form-check">
+                    <input class="form-check-input" name="terms" type="checkbox" value="" id="acceptTerms" required>
+                    <label class="form-check-label" for="acceptTerms">
+                    I agree and accept the <a href="#" onclick="showTermsModal()">terms and conditions</a>
+                    </label>
+                    <div class="invalid-feedback">You must agree before submitting.</div>
+                    </div>
                     </div>
                     <div class="col-12">
                       <button class="btn btn-primary w-100" id="submitButton" type="submit">Create Account</button>
@@ -142,6 +146,69 @@
       </section>
 
     </div>
+
+
+    <!-- Bootstrap Modal -->
+<div class="modal" tabindex="-1" role="dialog" id="termsModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Terms and Conditions</h5>
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+<p>1. Acceptance of Terms
+By registering on our website, you agree to comply with and be bound by these terms and conditions. If you do not agree to these terms, please do not register or use our services.</p>
+
+<p>2. Registration and Account Security
+
+a. You must provide accurate and complete information during the registration process.
+
+b. You are responsible for maintaining the security of your account credentials. Do not share your password and notify us immediately if you suspect any unauthorized access.</p>
+
+<p>3. User Conduct
+
+a. You agree not to engage in any activity that may disrupt or interfere with the proper functioning of the website.
+
+b. Do not use the website for any unlawful or prohibited purpose.</p>
+
+<p>4. Content Submission
+
+a. You retain ownership of the content you submit, but you grant us a non-exclusive, worldwide, royalty-free license to use, reproduce, modify, adapt, publish, and display the content.
+
+b. You are responsible for the content you submit, ensuring it does not violate any applicable laws or infringe on the rights of third parties.</p>
+
+<p>5. Privacy
+
+a. Our privacy policy governs the collection, use, and disclosure of personal information. By using our website, you agree to our privacy policy.</p>
+
+<p>6. Termination
+
+We reserve the right to terminate or suspend your account without notice for any violation of these terms and conditions.</p>
+
+<p>7. Disclaimer of Warranties
+
+a. The website is provided on an "as-is" and "as-available" basis. We make no warranties, expressed or implied, regarding the website's accuracy, completeness, reliability, or suitability for a particular purpose.
+
+b. We do not guarantee uninterrupted, timely, secure, or error-free access to the website.</p>
+
+<p>8. Limitation of Liability
+
+To the fullest extent permitted by law, we shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or in connection with your use of the website.</p>
+
+<p>9. Changes to Terms
+
+We reserve the right to modify or revise these terms and conditions at any time. Your continued use of the website after any changes constitutes acceptance of those changes.</p>
+
+<p>10. Governing Law
+
+These terms and conditions are governed by and construed in accordance with the laws of Misamis Occidental. Any disputes arising under or in connection with these terms shall be subject to the exclusive jurisdiction of the courts in Misamis Occidental.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
   </main><!-- End #main -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
@@ -161,6 +228,11 @@
   <script src="assets/js/main.js"></script>
   <script src="assets/js/sweetalert.min.js"></script>
 
+  <script>
+    function showTermsModal() {
+        $('#termsModal').modal('show');
+    }
+</script>
   <!-- Custome JS -->
   <script>
     $(document).ready(function () {
