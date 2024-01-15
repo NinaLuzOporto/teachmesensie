@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Registration</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: NiceAdmin
+  * Updated: May 30 2023 with Bootstrap v5.3.0
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <main>
+    <div class="container">
+
+      <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-6 d-flex flex-column align-items-center justify-content-center">
+
+              <div class="card mb-3">
+
+                <div class="card-body">
+
+                  <div class="pt-4 pb-2">
+                    <h5 class="card-title text-center pb-0 fs-4">Create an Account</h5>
+                    <p class="text-center small">Enter your personal details to create account</p>
+                  </div>
+
+                  <form action="registercode.php" method="POST" enctype="multipart/form-data" autocomplete="off"  class="row g-3 needs-validation" novalidate>
+                    
+                   <div class="row">
+                    <div class="col-md-6">
+                    <label for="fname" class="form-label">First Name <small style="color: red;">*</small></label>
+                      <input type="text" name="fname" class="form-control" id="fname" placeholder="Juan" required>
+                    </div>
+
+                    <div class="col-md-6">
+                    <label for="mname" class="form-label">Middle Name <small>(Optional)</small></label>
+                      <input type="text" name="mname" class="form-control" id="mname" placeholder="Angus">
+                    </div>
+
+                    <div class="col-md-6 mt-2">
+                    <label for="lname" class="form-label">Last Name <small style="color: red;">*</small></label>
+                      <input type="text" name="lname" class="form-control" id="lname" placeholder="Dela Cruz" required>
+                    </div>
+
+                    <div class="col-md-6 mt-2">
+                    <label for="lname" class="form-label">Suffix  <small>(Optional)</small></label>
+                    <select class="form-select" id="suffix" name="suffix">
+                        <option disabled selected value="">Select Suffix</option>
+                        <option value="I">I</option>
+                        <option value="II">II</option>
+                        <option value="III">III</option>
+                    </select>
+                    </div>
+
+                    <div class="col-md-12 mt-2">
+                    <label for="email" class="form-label">Email Address <small style="color: red;">*</small></label>
+                      <input type="text" name="email" class="form-control" id="email" placeholder="juandelacruz@gmail.com" required>
+                    </div>
+                    
+                    <div class="col-md-6 mt-2">
+                    <label for="password" class="form-label">Password <small style="color: red;">*</small></label>
+                      <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Enter Password" required>
+                    </div>
+
+                    <div class="col-md-6 mt-2">
+                    <label for="confirmPassword" class="form-label">Confirm Password <small style="color: red;">*</small></label>
+                      <input type="password" id="inputPasswordConfirm" name="confirmpassword" class="form-control" placeholder="Enter Password" required>
+                      <p id="passwordMatchError" style="color: red; display: none;">Passwords do not match.</p>
+                    </div>
+        
+                    <div class="col-md-6 mt-2">
+                    <label for="phone" class="form-label">Phone Number <small style="color: red;">*</small></label>
+                    <input type="text" name="phone" id="phone" class="form-control" placeholder="09X-XXX-XXXXX" required>
+                    </div>
+
+                    <div class="col-md-6 mt-2">
+                    <label for="role" class="form-label">Register As: <small style="color: red;">*</small></label>
+                    <select class="form-select" id="registerAs" name="role" required>
+                    <option disabled selected value="">Select</option>
+                    <option value="2">Tutor</option>
+                    <option value="1">Student</option>
+                  </select>
+                    </div>
+                   </div>
+
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" name="terms" type="checkbox" value="" id="acceptTerms" required>
+                        <label class="form-check-label" for="acceptTerms">I agree and accept the <a href="#">terms and conditions</a></label>
+                        <div class="invalid-feedback">You must agree before submitting.</div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <button class="btn btn-primary w-100" id="submitButton" type="submit">Create Account</button>
+                    </div>
+                    <div class="col-12">
+                      <p class="small mb-0">Already have an account? <a href="../login/index.php">Log in</a></p>
+                    </div>
+                  </form>
+
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+  </main><!-- End #main -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.min.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/sweetalert.min.js"></script>
+
+  <!-- Custome JS -->
+  <script>
+    $(document).ready(function () {
+        function validatePassword() {
+            var password = $("#inputPassword").val();
+            var confirmPassword = $("#inputPasswordConfirm").val();
+
+            if (password !== confirmPassword) {
+                $("#passwordMatchError").show();
+            } else {
+                $("#passwordMatchError").hide();
+            }
+        }
+
+        function checkPasswordMatch() {
+            validatePassword();
+
+            // Use AJAX to send the password and confirm password to the server for validation
+            $.ajax({
+                type: "POST",
+                url: "check_password.php", // Replace with the actual path to your server-side script
+                data: {
+                    password: $("#inputPassword").val(),
+                    confirmPassword: $("#inputPasswordConfirm").val()
+                },
+                success: function (response) {
+                    if (response === "false") {
+                        $("#passwordMatchError").show();
+                    } else {
+                        $("#passwordMatchError").hide();
+                    }
+                  
+                }
+            });
+        }
+        // Attach the input event handler to both password fields
+        $("#inputPassword, #inputPasswordConfirm").on("input", checkPasswordMatch);
+
+        // Attach the change event handler to the terms and conditions checkbox
+        $("#termsCheckbox").change(enableSubmitButton);
+
+        // Initial validation on document load
+        validatePassword();
+    });
+</script>
+
+
+  <script>
+    // Add event listener to the input field
+    document.getElementById('phone').addEventListener('input', function (event) {
+        // Remove non-numeric characters
+        let phoneNumber = event.target.value.replace(/\D/g, '');
+
+        // Check if the length is greater than 11, then trim to 11 digits
+        if (phoneNumber.length > 11) {
+            phoneNumber = phoneNumber.slice(0, 11);
+        }
+
+        // Format the phone number using regex
+        phoneNumber = phoneNumber.replace(/^(\d{2})(\d{3})(\d{5})$/, '$1-$2-$3');
+
+        // Set the formatted phone number back to the input field
+        event.target.value = phoneNumber;
+    });
+</script>
+
+<?php
+    if(isset($_SESSION['status']) && $_SESSION['status_code'] !='' )
+    {
+        ?>
+        <script>
+            swal({
+                title: "<?php echo $_SESSION['status']; ?>",
+                icon: "<?php echo $_SESSION['status_code']; ?>",
+            });
+        </script>
+        <?php
+        unset($_SESSION['status']);
+        unset($_SESSION['status_code']);
+    }
+    ?>
+
+</body>
+
+</html>
